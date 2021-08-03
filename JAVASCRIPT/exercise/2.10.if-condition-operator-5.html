@@ -2,8 +2,8 @@
 
 <body>
   <script>
-    // let login = prompt('신원');
-    // let message;
+    let login = prompt('신원');
+    let message;
 
     // if (login == '직원') {
     //   message = '안녕하세요.';
@@ -16,18 +16,16 @@
     // }
     // alert(message);
 
-
-    let login2 = prompt('신원');
-    let message2 =
-      login2 == '직원'
+    message =
+      login == '직원'
         ? '안녕하세요.'
-        : login2 == '임원'
+        : login == '임원'
           ? '환영합니다'
-          : login2 == ''
+          : login == ''
             ? '로그인이 필요합니다.'
             : '';
 
-    alert(message2);
+    alert(message);
   </script>
 </body>
 
