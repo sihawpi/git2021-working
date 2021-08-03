@@ -2,6 +2,39 @@
 
 <body>
   <script>
+    let userId;
+    let userPW = 'TheMaster';
+    userId = prompt('');
+
+    // if (userId === "Admin") {
+    //   if (userPW === prompt('Password?')) {
+    //     alert("Welcome!");
+    //   } else if (!(userPW === "TheMater")) {
+    //     alert('Wrong password');
+    //   } else {
+    //     alert('Canceled');
+    //   }
+    // } else if (!(userId === "Admin")) {
+    //   alert('I don\'t know you');
+    // } else {
+    //   alert('Canceled');
+    // }  
+    // esc를 누르거나 취소를 누르면 null이 반환되어 alert('I don\'t know you'); 코드가 실행됨
+
+    if (userId === "Admin") {
+      if (userPW = prompt('Password?', '')) {
+        alert("Welcome!");
+      } else if (userPW == null || userPW == '') {
+        alert('Cenceled');
+      } else {
+        alert('Wrong password')
+      }
+    } else if (userId == null || userId == '') {
+      alert('Cenceled');
+    } else {
+      alert('I don\'t know you.')
+    }
+    // esc, 취소 누르면 i dont know you가 출력되던 오류 해결.
 
   </script>
 </body>

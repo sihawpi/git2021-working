@@ -7,15 +7,20 @@
     let age;
     age = prompt('');
 
-    // if (age >= 14, age <= 90) {
-    //   alert('맞습니다.');
-    // } else {
-    //   alert('아닙니다');
-    // }
+    //  if (14<= age <= 90) {
+    //    alert('맞습니다.');
+    //  } else {
+    //    alert('아닙니다');
+    //  }
 
     if (age >= 14 && age <= 90) {
-      alert(age);
+      alert('포함됩니다.');
+    } else {
+      alert('포함되지 않습니다.');
     }
+    // 1. age가 14보다 작음 -> 왼쪽 항에서 false 반환 -> else문 실행
+    // 2. age가 90보다 크면 -> 오른쪽 항에서 false 반환 -> else문 실행
+    // 3. age가 14보다 크거나 90보다 작으면 treu 반환 -> if문 실행
 
   </script>
 </body>

@@ -2,9 +2,9 @@
 
 <body>
   <script>
-    if (-1 || 0) alert('first');
-    if (-1 && 0) alert('second');
-    if (null || -1 && 1) alert('third');
+    if (-1 || 0) alert('first');  // -1 = true -> 코드 실행
+    if (-1 && 0) alert('second'); // 0 = false -> 코드 실행 X
+    if (null || -1 && 1) alert('third'); // && 먼저 계산 -> true -> null || 1 = true -> 코드 실행
   </script>
 </body>
 
