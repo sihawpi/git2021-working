@@ -7,6 +7,7 @@
     console.log('1' == 1);    // true
     console.log(true == '1'); // true
     console.log(true == '0'); // false  
+    console.log(null == 0);   // flase
 
     console.log("----------------------");
 
@@ -18,12 +19,13 @@
     console.log(true === '1');
     console.log(true === '0');
 
-    //초급자들은 strict equal을 사용
-    //자동형변환을 하지 않음
+    // 초급자들은 strict equal을 사용
+    // 회사에서 아예 ===만 써야하는 경우도 있음
 
+    console.log("-------------");
 
-
-
+    console.log(null == undefined); // true
+    console.log(null === undefined); // false
   </script>
 </body>
 

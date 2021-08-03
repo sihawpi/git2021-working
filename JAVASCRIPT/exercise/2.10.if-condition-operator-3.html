@@ -2,15 +2,23 @@
 
 <body>
   <script>
-    let num = prompt('숫자를 입력해주세요.', "")
+    // let num = prompt('숫자를 입력해주세요.')
+    // const msg = "숫자를 입력해주세요."
+    // const answer = prompt(msg);
 
-    if (num == 0) {
+    const answer = prompt('숫자를 입력해주세요');
+    alert((answer));
+    if (answer == 0) {
       alert(0);
-    } else if (num < 0) {
+    } else if (answer < 0) {
       alert(-1);
     } else {
       alert(1);
     }
+
+    // 이 코드를 실행시켜 prompt창에 아무것도 입력하지 않고 확인/취소를 누르면
+    // 확인= ' ' -> (==)빈 문자열이 0으로 변환-> 0
+    // 취소= null -> null은 아무런 값을 가지지 않지만 마지막 else구문에 조건식이 없어서 1이 출력
   </script>
 </body>
 
