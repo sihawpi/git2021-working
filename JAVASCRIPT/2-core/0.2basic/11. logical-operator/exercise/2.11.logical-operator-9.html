@@ -22,6 +22,7 @@
     // esc를 누르거나 취소를 누르면 null이 반환되어 alert('I don\'t know you'); 코드가 실행됨
 
     if (userId === "Admin") {
+
       if (userPW = prompt('Password?', '')) {
         alert("Welcome!");
       } else if (userPW == null || userPW == '') {
@@ -29,6 +30,7 @@
       } else {
         alert('Wrong password')
       }
+
     } else if (userId == null || userId == '') {
       alert('Cenceled');
     } else {

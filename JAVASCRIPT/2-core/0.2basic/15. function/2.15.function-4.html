@@ -1,0 +1,29 @@
+<html>
+
+<body>
+  <script>
+    // 외부 변수(함수입장)
+    // 전역 변수(global variable)
+    let userName = 'John';
+    // 전역 객체 변수(window 객체)
+    var userEmail = 'john@gmail.com';
+
+
+    function showMessage() {
+
+      let message = "안녕하세요!";
+      // 지역(local) 변수 -> 함수 안의 변수
+      // let 변수명: 블럭(block) 범위 변수
+
+      alert(message);
+    }
+
+    showMessage(); // 안녕하세요!
+
+    alert(message);
+// ReferenceError: message is not defined
+// (message는 함수 내 지역 변수이기 때문에 에러가 발생합니다.)
+  </script>
+</body>
+
+</html>
