@@ -3,15 +3,25 @@
 <body>
   <script>
     // 입력 값
-    let n = 30;
+    let n = 10; // 범위
+    let i = 2;  // 현재 수
+    let j = 2;      // 나누는 수 
 
-    // i, j, k, l, m, n ------>
-    // 2부터 입력받은 숫자까지 증가
-    for (let i = 1; i <= n; i++) {
-      if (i %  == 0) {
-        console.log(i)
+
+
+    while (i <= n) {
+      let prime = true;
+      while (j < i) {
+        j = 2;
+        if (i % j == 0) {
+          prime = false;
+          j++;
+        } else if ()
       }
+      prime && console.log(i);
+      i++;
     }
+
   </script>
 </body>
 
