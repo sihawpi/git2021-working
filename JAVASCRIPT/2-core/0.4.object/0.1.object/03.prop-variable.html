@@ -1,0 +1,42 @@
+<html>
+
+<body>
+  <script>
+    let phone;
+    phone = '01032323232';
+    console.log(phone);
+    function makeUser(name, age, phone) {
+      phone = "";
+
+      // return {
+      //   name: name,
+      //   age: age,
+      //   // ...등등
+      // };
+
+      // let user = {};
+      // user.name = name;
+      // user.age = age;
+
+      // return user;
+
+      // 변수명과 속성명이 동일한 경우 속성명만 표기할 수 있음
+      return {
+        name,
+        age,
+        // phone:phone,
+        phone,
+        // ...등등
+      };
+    }
+
+    let user = makeUser("John", 30);
+    for (let loop in return) {
+      console.log(`${loop} : ${loop[return]
+    }`)
+    }
+    console.log(user.name); // John
+  </script>
+</body>
+
+</html>
