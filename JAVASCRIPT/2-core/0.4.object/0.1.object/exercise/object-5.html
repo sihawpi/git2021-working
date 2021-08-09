@@ -2,7 +2,27 @@
 
 <body>
   <script>
+    // 객체 obj의 프로퍼티 값이 숫자인 경우 
+    // 그 값을 두 배 해주는 함수 multiplyNumeric(obj)을 만들어보세요.
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+    console.log(menu);
 
+    // if (typeof (obj.prop) == 'number') {
+    //   obj.prop *= 2;              . [] 차이로 값이 변동이 안됨.
+    function multiplyNumeric(obj) {
+      for (let prop in obj) {
+        if (typeof (obj[prop]) == 'number') {
+          obj[prop] *= 2;
+          // obj[prop] *= 2;
+        }
+      }
+      return obj;
+    }
+    console.log(multiplyNumeric(menu));
   </script>
 </body>
 

@@ -2,7 +2,17 @@
 
 <body>
   <script>
+    const user = {
+      name: "John"
+    };
+    // const는 객체 찹조(메모리주소?) 변경 없이 속성만 바뀜
+    // 아래 코드는 에러 없이 실행될까요? yes
+    user.name = "Pete";
 
+    // 새로운 객체를 할당 에러 발생
+    user = {
+      name: "Pete"
+    }
   </script>
 </body>
 

@@ -3,24 +3,24 @@
 <body>
   <script>
     // 입력 값
-    let n = 10; // 범위
+    let n = 50; // 범위
     let i = 2;  // 현재 수
-    let j = 2;      // 나누는 수 
-
-
+    let j;     // 나누는 수 
 
     while (i <= n) {
-      let prime = true;
+      isprime = true;
+      j = 2;
       while (j < i) {
-        j = 2;
         if (i % j == 0) {
-          prime = false;
-          j++;
-        } else if ()
+          isprime = false;
+        }
+        j++;
       }
-      prime && console.log(i);
-      i++;
+      isprime && console.log(i);
+      i++
     }
+
+
 
   </script>
 </body>

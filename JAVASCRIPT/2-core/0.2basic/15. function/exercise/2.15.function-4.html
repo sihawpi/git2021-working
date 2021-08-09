@@ -1,0 +1,61 @@
+<html>
+
+<body>
+  <script>
+    // x의 n제곱을 반환해주는 함수, pow(x,n)를 만들어보세요. 
+    // x의 n 제곱은 x를 n번 곱해서 만들 수 있습니다.
+
+    // pow(3, 2) = 3 * 3 = 9
+    // pow(3, 3) = 3 * 3 * 3 = 27
+    // pow(1, 100) = 1 * 1 * ...* 1 = 1
+
+    // 프롬프트 대화상자를 띄워 사용자로부터 x와 n을 입력받고 
+    // pow(x,n)의 반환 값을 보여주는 코드를 작성해 보세요.
+
+    // function getxn() {
+    //   x = prompt('x를 입력해주세요.', '');
+    //   n = prompt('n를 입력해주세요.', '');
+    // }         이 함수를 이용해서 x, n값을 pow에서 사용하려면 어떻게 해야할까...
+
+    function pow(x, n) {
+      if (n < 1) {
+        alert('1 이외의 자연수를 입력해주세요.')
+        return;
+      }
+      return (x ** n);
+    }
+    let x = prompt('x를 입력해주세요.', '');
+    let n = prompt('n를 입력해주세요.', '');
+    // 단순하게 x, n 을 받아서 x**n 출력
+  </script>
+
+  <script>
+    alert(pow(x, n));
+
+    function pow(x, n) {
+      let result = x;
+
+      for (let i = 1; i < n; i++) {
+        result *= x;
+      }
+
+      return result;
+    }
+
+    let x = prompt("x?", '');
+    let n = prompt("n?", '');
+
+    if (n < 1) {
+      alert(`${n}은 양의 정수이어야 합니다.`);
+    } else {
+      alert(pow(x, n));
+    }
+
+    // x와 n을 받아서 x를 n에 따라 반복해서 곱하게 함 (제곱의 원리)
+    // x, n 을 받을 때 n이 1 미만이면 애초에 실행 x -> 합리적
+
+
+  </script>
+</body>
+
+</html>

@@ -2,7 +2,23 @@
 
 <body>
   <script>
+    let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+    };
 
+    function getSum(obj) {
+      let sum = 0;
+      for (let prop in obj) {
+        // for (in) 반복문으로 각 프로퍼티의 값을 더함
+        sum = sum + obj[prop];
+      }
+      return sum;
+      // 함수가 종료될 때 sum을 반환
+    }
+
+    console.log(getSum(salaries));
   </script>
 </body>
 

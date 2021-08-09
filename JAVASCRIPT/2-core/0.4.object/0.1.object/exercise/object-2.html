@@ -2,7 +2,33 @@
 
 <body>
   <script>
+    // 객체에 프로퍼티가 하나도 없는 경우 true, 
+    // 그렇지 않은 경우 false를 반환해주는 함수 isEmpty(obj)를 만들어 보세요.
+    // 아래와 같이 동작해야 합니다.
 
+    // let schedule = {};
+
+    // alert(isEmpty(schedule)); // true
+
+    // schedule["8:30"] = "get up";
+
+    // alert(isEmpty(schedule)); // false
+
+    let schedule = {};
+
+    function isEmpty(schedule) {
+      // for문이 실행된다는 얘기는 property가 있다는 뜻.
+      for (let prop in schedule) {
+        return false;
+      }
+      return true;
+    }
+
+    alert(isEmpty(schedule)); // true
+
+    schedule["8:30"] = "get up";
+
+    alert(isEmpty(schedule)); // false
   </script>
 </body>
 
