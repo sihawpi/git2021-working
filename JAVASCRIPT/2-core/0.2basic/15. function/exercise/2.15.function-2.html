@@ -1,29 +1,28 @@
 <html>
+  <body>
+    <script>
+      // function checkAge(age) {
+      //   if (age > 18) {
+      //     return true;
+      //   } else {
+      //     return confirm('보호자의 동의를 받으셨나요?');
+      //   }
+      // }
 
-<body>
-  <script>
-    // function checkAge(age) {
-    //   if (age > 18) {
-    //     return true;
-    //   } else {
-    //     return confirm('보호자의 동의를 받으셨나요?');
-    //   }
-    // }
+      let age = prompt("귀하의 나이는 몇세입니까?", "");
+      function checkAge(age) {
+        return age > 18 ? true : confirm("보호자의 동의를 받으셨나요?");
+      }
+      // return을 써주지 않으면 입력값과 상관없이 undefiend가 반환
+      alert(checkAge(age));
 
-    let age = prompt("귀하의 나이는 몇세입니까?", "")
-    function checkAge(age) {
-      return age > 18 ? true :
-        confirm('보호자의 동의를 받으셨나요?');
-    }
-    // return을 써주지 않으면 입력값과 상관없이 undefiend가 반환
-    alert(checkAge(age));
+      function checkAgeOr(age) {
+        return age > 18 || confirm("보호자의 동의를 받으셨나요?");
+      }
+      // ||(or)연산자는 피연산자중 하나만 true이면 해당 피연산자 반환
+      // 왼쪽 항은 비교연산자 -> boolean값으로 반환  두 코드가 같은 코드
 
-
-    function checkAgeOr(age) {
-      return age > 18 || confirm('보호자의 동의를 받으셨나요?');
-    }
-    // ||(or)연산자는 피연산자중 하나만 true이면 해당 피연산자 반환
-  </script>
-</body>
-
+      alert(checkAgeOr(age));
+    </script>
+  </body>
 </html>

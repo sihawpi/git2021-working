@@ -1,25 +1,43 @@
 <html>
+  <body>
+    <script>
+      let i;
+      do {
+        i = prompt("100을 초과하는 숫자를 입력해주세요", "");
+      } while (i <= 100 && i);
+      // && i -> null, '' 을 거르기 위한 장치
+      // while (boolean) -> (i <= 100 && i) 에서 && 연산자는 첫번째 항 또는 번째항을 반환
+      // -> 반환된 항을 boolean형으로 변환
+      // null, '' 은 boolean형이 false -> && i 에서 false가 반환 -> while문 종료
 
-<body>
-  <script>
-    let i;
-    do {
-      i = prompt("100을 초과하는 숫자를 입력해주세요", "");
-    } while (i <= 100 && i);
-    // && i -> null, '' 을 거르기 위한 장치
-    // while (boolean) -> (i <= 100 && i) 에서 && 연산자는 첫번째 항 또는 번째항을 반환
-    // -> 반환된 항을 boolean형으로 변환 
-    // null, '' 은 boolean형이 false -> && i 에서 false가 반환 -> while문 종료
+      // do {
+      //   i = prompt("100을 초과하는 숫자를 입력해주세요", "");
+      //   console.log(i)
+      // } while (i <= 100);
+      // 아무런 입력X(''), 취소(null)를 비교연산하면 숫자형(0)으로 바뀌어
+      // 반복문이 멈추지 않는다.
 
-    // do {
-    //   i = prompt("100을 초과하는 숫자를 입력해주세요", "");
-    //   console.log(i)
-    // } while (i <= 100);
-    // 아무런 입력X(''), 취소(null)를 비교연산하면 숫자형(0)으로 바뀌어 
-    // 반복문이 멈추지 않는다.
+      // ** null, undifiend을 동등연산하면 형변환하지 않는다.
+    </script>
+    <script>
+      // let input = prompt("100보다 큰 수를 입력해주세요.", "");
 
-    // ** null, undifiend을 동등연산하면 형변환하지 않는다.
-  </script>
-</body>
+      // while (input <= 100 || typeof input == "string") {
+      //   input = prompt("100보다 큰 수를 입력해주세요.", "");
+      //   if (input > 100 || input == null) {
+      //     break;
+      //   }
+      // }
+      // 이 코드는 숫자가 아닌 입력값을 입력했을 때도 반복해서 prompt창을 띄우고
+      //      조건에 맞는 값을 넣거나 취소(null)을 입력했을 때 종료된다.
 
+      do {
+        input = prompt("100보다 큰 수를 입력해주세요.", "");
+        if (input > 100 || input == null) {
+          break;
+        }
+      } while (input <= 100 || typeof input == "string");
+      // do반복문
+    </script>
+  </body>
 </html>

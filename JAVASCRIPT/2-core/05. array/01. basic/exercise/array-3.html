@@ -1,15 +1,13 @@
 <html>
+  <body>
+    <script>
+      let arr = ["a", "b"];
 
-<body>
-  <script>
-    let arr = ["a", "b"];
+      arr.push(function () {
+        console.log(this);
+      });
 
-    arr.push(function () {
-      alert(this);
-    })
-
-    arr[2](); // ?
-  </script>
-</body>
-
+      arr[2](); // ?
+    </script>
+  </body>
 </html>

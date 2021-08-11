@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <script>
+      // 입력값은 arr = [1, -2, 3, 4, -9, 6] 같이 숫자로만 구성된 배열이라고 가정해봅시다.
+      // 우리가 해야 할 일은 인접한 요소의 총합이 최대인 arr의 부분 배열을 찾는 것입니다.
+      // 부분 배열 요소들의 합을 리턴하는 함수 getMaxSubSum(arr)를 작성해 봅시다.
+
+      let arr = [1, -2, 3, 4, -9, 6];
+      let maxSum = 0;
+      let sum = 0;
+      function getMaxSubSum(arr) {
+        for (let elm of arr) {
+          sum += elm; // 부분 합산 값
+
+          if (sum > maxSum) {
+            maxSum = sum; // 부분 합산 값이 최대합산값 보다 크다면 최대합산값에 대입
+          }
+
+          if (sum < 0) {
+            sum = 0; // 현재까지의 부분 합산값이 0보다 작다면 어차피 최대값이 아니기 때문에
+          } // 다음 합산값의 결과를 위해 0을 대입
+        }
+        return maxSum;
+      }
+      console.log(getMaxSubSum(arr));
+
+      // 1: elm = 1  -> sum =  1 -> maxSum = 1
+      // 2: elm = -2 -> sum = -1 -> sum = 0(초기화) 부분최대값을 구하는거라 음수가 나온다면 다음 요소가 아무리 큰 수라도 음수의 크기만큼 최대합산 값이 감소하기때문.
+      // 3: elm = 3  -> sum = 3  -> maxSum = 3
+      // ...
+      // 6: elm = 6  -> sum =
+    </script>
+  </body>
+</html>

@@ -1,28 +1,30 @@
 <html>
+  <body>
+    <script>
+      // 메서드는 객체에 저장된 정보에 접근할 수 있어야 제 역할을 할 수 있습니다.
+      // 모든 메서드가 그런 건 아니지만, 대부분의 메서드가 객체 프로퍼티의 값을 활용합니다.
+      let user = {
+        name: "John",
+        age: 30,
 
-<body>
-  <script>
-    let user = {
-      name: "John",
-      age: 30,
+        sayHi() {
+          // 'this'는 '현재 객체'를 나타냅니다.
+          // this를 사용하면 함수가 객체 안으로 호출되었을 때 그 객체를 참조함...?
+          // this 를 함수의 매개변수 정도로 생각하면 될까...
+          alert(`Hello, ${this.name}!`);
+        },
+        sayHiAndBye() {
+          this.sayHi(); // 객체 내부의 함수를 실행
+          alert(`Bye, ${this.name}!`);
+        },
+      };
 
-      sayHi() {
-        // 'this'는 '현재 객체'를 나타냅니다.
-        alert(`Hello, ${this.name}!`);
-      },
-      sayHiAndBye() {
-        this.sayHi(); // 객체 내부의 함수를 실행
-        alert(`Bye, ${this.name}!`);
-      }
-    };
+      let admin = user;
 
-    let admin = user;
+      user.sayHi(); // Hello, John!
+      user.sayHiAndBye(); // Hello, John!, Bye, John!
 
-    user.sayHi(); // Hello, John!    
-    user.sayHiAndBye(); // Hello, John!, Bye, John!
-
-    admin.sayHi();
-  </script>
-</body>
-
+      admin.sayHi();
+    </script>
+  </body>
 </html>

@@ -1,19 +1,23 @@
 <html>
+  <body>
+    <script>
+      const user = {
+        name: "John",
+      };
+      // const는 객체 찹조(메모리주소?) 변경 없이 속성만 바뀜
+      // 아래 코드는 에러 없이 실행될까요? yes
+      user.name = "Pete";
 
-<body>
-  <script>
-    const user = {
-      name: "John"
-    };
-    // const는 객체 찹조(메모리주소?) 변경 없이 속성만 바뀜
-    // 아래 코드는 에러 없이 실행될까요? yes
-    user.name = "Pete";
+      // 새로운 객체를 할당 에러 발생
+      // user = {
+      //   name: "Pete",
+      // };
 
-    // 새로운 객체를 할당 에러 발생
-    user = {
-      name: "Pete"
-    }
-  </script>
-</body>
+      // 프로퍼티 추가 가능
+      user.number = "10";
+      console.log(user);
 
+      // const는 객체 안의 데이터는 자유롭게 변경 가능.
+    </script>
+  </body>
 </html>

@@ -1,27 +1,46 @@
 <html>
+  <body>
+    <script>
+      // callback(콜백), 매개변수로 전달한 함수
+      // 매개변수를 받은 함수에서 콜백을 호출함
 
-<body>
-  <script>
-    // callback(콜백), 매개변수로 전달한 함수
-    // 매개변수를 받은 함수에서 콜백을 호출함
+      function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+      }
 
-    function ask(question, yes, no) {
-      if (confirm(question)) yes()
-      else no();
-    }
+      function showOk() {
+        alert("동의하셨습니다.");
+      }
 
-    function showOk() {
-      alert("동의하셨습니다.");
-    }
+      function showCancel() {
+        alert("취소 버튼을 누르셨습니다.");
+      }
 
-    function showCancel() {
-      alert("취소 버튼을 누르셨습니다.");
-    }
+      // 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
+      ask("개인정보 수집에 동의하십니까?", showOk, showCancel);
+      ask("백신에 맞아도 죽을 수 있습니다. 동의하십니까?", showOk, showCancel);
 
-    // 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
-    ask("개인정보 수집에 동의하십니까?", showOk, showCancel);
-    ask("백신에 맞아도 죽을 수 있습니다. 동의하십니까?", showOk, showCancel);
-  </script>
-</body>
+      // 1 부터 n의 합 구하기
+      function f(n) {
+        if (n <= 1) {
+          return 1; // 종료 조건
+        }
+        return n + f(n - 1); // 재귀함수
+        // retrun을 하면 함수가 종료되지만 return값에 함수가 들어있어
+        // return값에 함수가 포함되어서 나옴(n이 1이 될 때 까지 반복)
+      }
+      console.log(f(100)); //5050
 
+      // 재귀함수
+      // 순번   f(n)   n      return       최종
+      // 1   f(100)  100  100 + f(99)  100+99+98+97+96+95+94..+2+1
+      // 2   f(99)   99   99 + f(98)   99+98+97+96+95+94..+2+1
+      // 3   f(98)   98   98 + f(97)   98+97+96+95+94..+2+1
+      // 4   f(97)   97   97 + f(96)   97+96+95+94..+2+1
+      // ...
+      // 2   f(2)    2    2 + f(1)    2+1
+      // 1  f(1)    1    1 // return값이 자기 자신을 호출하지 않는 상황
+    </script>
+  </body>
 </html>
