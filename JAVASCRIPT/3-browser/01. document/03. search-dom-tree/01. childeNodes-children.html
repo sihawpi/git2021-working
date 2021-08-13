@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <div>시작</div>
+    <ul>
+      <li>
+        <b>항목</b>
+      </li>
+    </ul>
+    <div>끝</div>
+    <!-- script 태그를 가장 하단 -->
+    <script>
+      // body 밑에 있는 하위 *"노드들"을 탐색
+      // for of 문법을 사용할 수 있다( 배열에만 사용가능한 것이 아니라
+      // 반복탐색 가능한 객체에 사용 가능)
+      // 배열은 아니기 때문에 배열 메소드는 사용 불가(ex filter...)
+      for (let node of document.body.childNodes) {
+        console.log(node);
+      }
+
+      // // 첫번째 자식노드, 마지막 자식노드
+      //  console.log(document.body.firstChild);
+      //  console.log(document.body.lastChild);
+
+      // body 밑에 있는 하위 *"요소(element)들"을 탐색
+      for (let elem of document.body.children) {
+        console.log(elem); // DIV, UL, DIV, SCRIPT
+      }
+    </script>
+  </body>
+</html>

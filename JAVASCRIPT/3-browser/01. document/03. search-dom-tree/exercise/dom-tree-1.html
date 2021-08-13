@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <div>사용자:</div>
+    <ul>
+      <li>John</li>
+      <li>Pete</li>
+    </ul>
+    <script>
+      // <div> dom노드
+      // 1.
+      const div = document.body.children[0];
+      console.log(div);
+      // 2.
+      const div2 = document.body.firstElementChild; // body -> div
+      console.log(div2);
+      // 3.
+      const div3 = document.body.childNodes[1]; // body -> [0] = #text -> [1] = div
+      // const div = document.body.childNodes[0]; // #text
+      console.log(div3);
+      // 4.
+      const div4 = document.body.children[1].previousSibling.previousSibling;
+      // body -> [1] = ul -> #text -> div
+      console.log(div4);
+
+      // <ul> DOM 노드
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+  <head></head>
+  <body>
+    <form name="search">
+      <label
+        >Search the site:
+        <input type="text" name="search" />
+      </label>
+      <input type="submit" value="Search!" />
+    </form>
+
+    <hr />
+
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody>
+          <tr>
+            <td>Age:</td>
+            <td id="age-list">
+              <label>
+                <input type="radio" name="age" value="young" />less than
+                18</label
+              >
+              <label>
+                <input type="radio" name="age" value="mature" />18-50</label
+              >
+              <label>
+                <input type="radio" name="age" value="senior" />more than
+                50</label
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td>Additionally:</td>
+            <td>
+              <input type="text" name="info[0]" />
+              <input type="text" name="info[1]" />
+              <input type="text" name="info[2]" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="submit" value="Search!" />
+    </form>
+  </body>
+  <script>
+    // id="age-table"인 테이블
+    const ageTb1 = document.getElementById("age-list");
+    console.log(ageTb1);
+
+    const ageTb2 = document.querySelector("#age-list");
+    console.log(ageTb2);
+
+    const ageTb3 = document.body.children[2].children[0];
+    console.log(ageTb3);
+    // 테이블 내의 label 요소 모두(총 3개)
+    // children
+    const label1 = ageTb1.querySelectorAll.td;
+    console.log(label1);
+  </script>
+</html>

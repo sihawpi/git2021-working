@@ -1,0 +1,55 @@
+<html>
+  <body>
+    <script>
+      function filterRangeInPlace(arrParm, a, b) {
+        // 매개변수의 참조를 변경시키는 것은 안 되는 상황
+
+        // 함수 안에서 매개변수에 결과를 대입해봤자 함수를 단독으로 사용하는게 아니면
+        // 함수 밖의 실제로 존재하는 변수 값은 변하지 않음
+
+        // 매개변수로 받아 함수 안에서 값을 조작하고 결과까지 매개변수로 저장을 해야
+        // 함수를 호출할 때 실제 변수 값이 변환됨    이해가 잘 안되서 다시 정리해야함.
+
+        /* arrParm = arr.filter((item) => item >= a && item <= b);
+        console.log("--in function--");
+        console.log(arrParm); */
+        // => 함수는 어떤 동작을 수행하도록 만들고 그 동작이 필요할 떄 마다 호출해서 사용하는데
+        //    이런 외부의 값을 직접적으로 바꾸는 함수는 호출하는 의미가 없음. 함수로 작성하나 그냥 작성하나 똑같음.
+
+        // 사이에 포함되지 않는 숫자들만 필터링
+        // 판별함수의 반환값이 true인 요소들을 모두 반환 (새로운 배열로 반환)
+        let result = arrParm.filter((item) => item < a || item > b);
+        // console.log(result); // 배열로 나옴
+
+        // 포함되지 않는 숫자들을 반복
+        for (let item of result) {
+          // 입력받은 배열에서 해당 숫자가 있으면
+          // includes는 배열에 있는지 없는지 확인하고 불린값으로 반환
+          if (arrParm.includes(item)) {
+            // 입력 받은 배열에서 해당 숫자를 제거
+            // arr.splice(index[deleteCount, elem1, "...", elemN]);
+            arrParm.splice(arrParm.indexOf(item), 1);
+            // arrParm배열의 item이 들어있는 요소를 삭제
+            // = arrParm배열의 item이 들어있는 요소부터 요소 1(deleteCount)개 요소 삭제
+          }
+        }
+
+        // 화살표 함수로 작성
+        // result.forEach((item) => {
+        //   if (arrParm.includes(item)) {
+        //     arrParm.splice(arrParm.indexOf(item), 1);
+        //   }
+        // });
+
+        console.log("--in function--");
+        console.log(arrParm);
+      }
+
+      let arr = [5, 3, 8, 1];
+      filterRangeInPlace(arr, 1, 4);
+      console.log("--out function--");
+      // console.log(arr);
+      filterRangeInPlace(arr, 1, 4);
+    </script>
+  </body>
+</html>

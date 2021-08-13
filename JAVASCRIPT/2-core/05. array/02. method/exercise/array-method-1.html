@@ -5,7 +5,27 @@
       function camelize(str) {
         // -구분자로 문자열 나눠서 배열화
         let strArr = str.split("-");
-        console.log(strArr);
+        console.lgo(strArr);
+
+        // 첫번째 반복
+        // acc = ""
+        // item = "background"
+        // index = 0
+        // acc = acc + "background"
+
+        // 두번째 반복
+        // acc = "background"
+        // item = "color"
+        // index = 1
+        // acc = acc + "Color"
+
+        // 최종 반환값
+        // acc = "backgroundColor"
+        return strArr.reduce(
+          (acc, item, index) =>
+            acc + (index == 0 ? item : item[0].toUpperCase() + item.substr(1)),
+          ""
+        );
       }
 
       console.log(camelize("background-color"));

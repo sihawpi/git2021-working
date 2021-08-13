@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <script>
+      let arr = [5, 2, 1, -10, 8];
+
+      // a>b = 양수 a가 b보다 뒤
+      // a<b = 음수 a가 b보다 앞
+      // a=b = 0 동등한 위치
+      // arr.sort((a, b) => a - b);  내림차순
+
+      // b>a = 양수 b가 a보다 앞
+      // b<a = 음수 b가 a보다 뒤
+      // a=b = 0 동등한 위치
+      arr.sort((a, b) => b - a); //오름차순
+
+      console.log(arr);
+    </script>
+  </body>
+</html>

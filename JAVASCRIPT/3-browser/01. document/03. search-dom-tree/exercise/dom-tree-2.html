@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <!-- 요소와 요소 사이의 공백도 노드 -->
+    <div>사용자:</div>
+    <ul>
+      <li>John</li>
+      <li>Pete</li>
+    </ul>
+    <script>
+      // ~sibling: node 탐색(textnode, htmlelement)
+      // children: element 탐색
+      console.log(document.body.lastChild.nextSibling); // javascript -> 그 다음 요소든 노드든 없음. - null
+      console.log(document.body.children[0].previousSibling); // body와 div사이의 공백 "\n  " -> #text
+    </script>
+  </body>
+</html>

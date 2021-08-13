@@ -1,14 +1,31 @@
 <html>
+  <body>
+    <script>
+      let arr = ["Bilbo", "Gandalf", "Nazgul"];
 
-<body>
-  <script>
-    let arr = ["Bilbo", "Gandalf", "Nazgul"];
+      // 배열.forEach((요소변수, 인덱스변수, [현재배열변수]) => { 처리할 구문})
 
-    // 배열.forEach((요소변수, 인덱스변수, [현재배열변수]) => { 처리할 구문})
-    arr.forEach((item, index) => {
-      console.log(item, index);
-    });
-  </script>
-</body>
+      // 인자가 하나면 괄호 생략 가능
+      // arr.forEach(item=> {
+      arr.forEach((item) => {
+        console.log(item); // 그냥 요소 출력은 for of문이 나음
+      });
 
+      // index를 받아야 할 때 유용.
+      arr.forEach((item, index) => {
+        console.log(item, index);
+      });
+
+      const superheroes = [
+        "아이언맨",
+        "캡틴 아메리카",
+        "토르",
+        "닥터 스트레인지",
+      ];
+
+      superheroes.forEach((hero) => {
+        console.log(hero);
+      });
+    </script>
+  </body>
 </html>

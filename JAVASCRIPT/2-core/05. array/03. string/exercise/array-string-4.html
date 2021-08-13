@@ -7,15 +7,20 @@
         // 한글자씩 숫자변환 후 isNaN테스트
         for (let chr of str) {
           // 숫자변환 후 NaN이 아닌 글자만 결과 문자열에 추가함
+
+          // isNaN NaN인지 아닌지 boolean값 반환
+          // (+chr !== "NaN")안됨 NaN은 비교 불가
           if (!isNaN(+chr)) {
+            // 숫자로 연산하는게 아닌 문자열 결합
             result += chr;
           }
         }
-
+        // return할 때는 숫자형으로 변환
         return +result;
       }
 
       console.log(extractCurrencyValue("$120"));
+      console.log(extractCurrencyValue("$120") === 120);
     </script>
   </body>
 </html>

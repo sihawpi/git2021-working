@@ -1,0 +1,60 @@
+<html>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>1:1</td>
+          <td>2:1</td>
+          <td>3:1</td>
+          <td>4:1</td>
+          <td>5:1</td>
+        </tr>
+        <tr>
+          <td>1:2</td>
+          <td>2:2</td>
+          <td>3:2</td>
+          <td>4:2</td>
+          <td>5:2</td>
+        </tr>
+        <tr>
+          <td>1:3</td>
+          <td>2:3</td>
+          <td>3:3</td>
+          <td>4:3</td>
+          <td>5:3</td>
+        </tr>
+        <tr>
+          <td>1:4</td>
+          <td>2:4</td>
+          <td>3:4</td>
+          <td>4:4</td>
+          <td>5:4</td>
+        </tr>
+        <tr>
+          <td>1:5</td>
+          <td>2:5</td>
+          <td>3:5</td>
+          <td>4:5</td>
+          <td>5:5</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const tbody = document.body.children[0].children[0];
+      console.log(tbody);
+      // table(body).raws[index] = index에 해당하는 tr에 접근
+      // table(body).raws[index].cells[index] = index에 해당하는 tr에 접근 그 tr의 각 칸에 접근
+      // 배열은 아니지만 배열형식으로 접근 가능
+      console.log(tbody.rows[0]); // -> 첫번째 tr
+      console.log(tbody.rows[0].cells[0]); // -> 첫번째 tr. 첫번째 cell -> 1:1
+
+      for (i = 0; i < tbody.rows.length; i++) {
+        // tbody.rows[0].cells[0].style.backgroundColor = "red";
+        // tbody.rows[1].cells[1].style.backgroundColor = "red";
+        // tbody.rows[2].cells[2].style.backgroundColor = "red";
+        // ...
+        tbody.rows[i].cells[i].style.backgroundColor = "red";
+      }
+    </script>
+  </body>
+</html>

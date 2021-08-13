@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script>
+      // 정렬을 하느넫 기존 배열을 고치면 안됨
+      // 배열.sort는 기존 배열을 변경함
+      function copySorted(arr) {
+        // 매개변수로 받은 배열을 복제
+        let copy = [...arr]; // spread: ...object => 해당 객체를 불러옴
+
+        // 문자열 순서대로 정렬
+        // sort, localCompare로 문자열 사전 정렬
+        // return copy.sort((a, b) => a.localeCompare(b));
+
+        // 한줄로 표현 가능
+        // slice() 요소선택을 하지 않으면 처음부터 끝까지 복사
+        // sort() 단순 배열에서는 문자열도 자동으로 정렬됨
+        // 배열 안에 객체가 들어있을 때 문자열로 정렬하고 싶다면 localeCompare
+        return arr.slice().sort();
+      }
+
+      let arr = ["HTML", "JavaScript", "CSS"];
+
+      let sorted = copySorted(arr);
+
+      console.log(sorted); // CSS, HTML, JavaScript
+      console.log(arr); // HTML, JavaScript, CSS (no changes)
+    </script>
+  </body>
+</html>

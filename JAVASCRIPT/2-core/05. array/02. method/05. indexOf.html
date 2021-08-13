@@ -1,29 +1,30 @@
 <html>
+  <body>
+    <script>
+      let arr = [1, 0, false];
 
-<body>
-  <script>
-    let arr = [1, 0, false];
+      alert(arr.indexOf(0)); // 찾으면 해당 인덱스 반환 = 1
+      alert(arr.indexOf(false)); // = 2
+      // 요소를 찾을 때 완전 항등 연산자 === 을 사용한다
+      // false를 검색하면 정확히 false만을 찾고, 0을 검색하지 않는다.
 
-    alert(arr.indexOf(0)); // 1
-    alert(arr.indexOf(false)); // 2
+      // 해당 요소가 배열에 없으면 -1 반환
+      alert(arr.indexOf("a")); // -1
 
-    // 해당 요소가 배열에 없으면 -1
-    alert(arr.indexOf('a')); // -1
+      if (arr.indexOf("a") > -1) {
+        console.log("존재 함");
+      } else {
+        console.log("존재하지 않음");
+      }
+      // 요소의 인덱스 위치를 알고 싶다면 arr.indexOf
+      // 요소가 배열 내 존재하는지 여부만 확인하고 싶다면 arr.includes를 사용하는 게 좋음.
+      alert(arr.includes(1)); // true
 
-    if (arr.indexOf('a') > -1) {
-      console.log("존재 함")
-    } else {
-      console.log("존재하지 않음")
-    }
-
-    alert(arr.includes(1)); // true
-
-    if (arr.includes('a')) {
-      console.log("존재 함")
-    } else {
-      console.log("존재하지 않음")
-    }
-  </script>
-</body>
-
+      if (arr.includes("a")) {
+        console.log("존재 함");
+      } else {
+        console.log("존재하지 않음");
+      }
+    </script>
+  </body>
 </html>
