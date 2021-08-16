@@ -4,6 +4,12 @@
       <body>
         <button id="elem">클릭해 주세요.</button>
         <script>
+          /*‘click’ 이벤트가 발생했다면 마우스 포인터가 어디에 있는지, 
+          ‘keydown’ 이벤트가 발생했다면 어떤 키가 눌렸는지 등에 대한 상세한 정보가 필요합니다.
+          이벤트가 발생하면 브라우저는 *이벤트 객체(event object)*라는 것을 만듭니다. 
+          여기에 이벤트에 관한 상세한 정보를 넣은 다음, 핸들러에 인수 형태로 전달합니다.*/
+
+          // 이벤트 객체로부터 포인터 좌표 정보를 얻어내는 예시
           const elem = document.querySelector("#elem");
 
           // 이벤트가 실행될 때 event 객체를 매개변수로 넘겨줌
@@ -15,6 +21,7 @@
             console.log(e.clientY);
           };
 
+          // elem 요소에 대해서 click이벤트가 발생하면 click함수 실행
           elem.addEventListener("click", click);
         </script>
       </body>

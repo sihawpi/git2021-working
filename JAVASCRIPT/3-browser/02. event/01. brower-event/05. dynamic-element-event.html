@@ -34,7 +34,7 @@
         console.log(event.currentTarget); // 이벤트 리스너가 동작하는 요소
         console.log(event.target.tagName);
 
-        // 2. 해당 요소가 맞는 확인하는 작업
+        // 2. 해당 요소가 맞는지 확인하는 작업
         // 클릭 이벤트를 발생시킨 요소가 strong 태그이면
         if (event.target.tagName == "STRONG") {
           this.alert("안녕하세요! 부모요소에 붙임");
@@ -44,13 +44,11 @@
       // 1. 추가할 요소 문자열을 생성
       // back-quote(`), template-literal(조각UI 표기법)
       // extension: es6-string-html
-      const alert =
-        /*html*/
-        `
+      const alert = /*html*/ `
       <div class="alert">
         <strong>안녕하세요!</strong> 중요 메시지를 확인하셨습니다.
       </div>    
-    `;
+      `;
 
       // 2. 삽입할 위치에 맞게 요소 문자열 추가
       setTimeout(() => {

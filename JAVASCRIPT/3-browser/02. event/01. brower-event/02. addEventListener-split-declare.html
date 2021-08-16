@@ -9,6 +9,8 @@
       const elem1 = document.querySelector("#elem1");
       const elem2 = document.querySelector("#elem2");
 
+      // 등록과 처리를 분리해놓으면 코드가 간결해지고 수정하기도 편하다
+
       // 이벤트 리스너 등록부
       elem.addEventListener("click", click);
       elem1.addEventListener("click", click);
@@ -17,7 +19,7 @@
       // 함수 선언부: 실제 이벤트가 처리되는 부분
       function click(event) {
         console.log(event);
-        // console.log(this);  // button
+        // console.log(this);  // button   8월 13일 9시 59분 내용 이해 안됨.
         alert("클릭");
       }
     </script>

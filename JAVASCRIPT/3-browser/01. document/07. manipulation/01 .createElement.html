@@ -16,10 +16,15 @@
 
     <script>
       // document.createElement(태그)
+      // UI가 어떻게 생겼는지 직관적으로 보이지 않는다.
+
       // 1. 해당 태그의 요소를 생성함
+      // 메모리 공간에 DOM만 만들었음
+      // 어떤 요소에 추가 해야함.
       let div = document.createElement("div");
 
       // 2. 해당 요소의 속성들을 설정함(div class="alert")
+      // div.class(예약어라 안됨)
       div.className = "alert";
 
       // 3. 해당 요소의 내용을 채워넣음

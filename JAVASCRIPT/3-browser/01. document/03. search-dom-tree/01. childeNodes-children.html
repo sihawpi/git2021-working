@@ -6,7 +6,7 @@
         <b>항목</b>
       </li>
     </ul>
-    <div>끝</div>
+    <!-- <div>끝</div> -->
     <!-- script 태그를 가장 하단 -->
     <script>
       // body 밑에 있는 하위 *"노드들"을 탐색
@@ -18,10 +18,11 @@
       }
 
       // // 첫번째 자식노드, 마지막 자식노드
-      //  console.log(document.body.firstChild);
-      //  console.log(document.body.lastChild);
+      console.log(document.body.firstChild); // #text
+      console.log(document.body.lastChild); // script
 
       // body 밑에 있는 하위 *"요소(element)들"을 탐색
+      // chilednodes보다 children을 주로 사용함. 바로 요소(=태그)에 접근할 수 있음.
       for (let elem of document.body.children) {
         console.log(elem); // DIV, UL, DIV, SCRIPT
       }

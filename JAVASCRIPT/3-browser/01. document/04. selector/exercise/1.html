@@ -19,16 +19,14 @@
             <td>Age:</td>
             <td id="age-list">
               <label>
-                <input type="radio" name="age" value="young" />less than
-                18</label
-              >
+                <input type="radio" name="age" value="young" />less than 18
+              </label>
               <label>
-                <input type="radio" name="age" value="mature" />18-50</label
-              >
+                <input type="radio" name="age" value="mature" />18-50
+              </label>
               <label>
-                <input type="radio" name="age" value="senior" />more than
-                50</label
-              >
+                <input type="radio" name="age" value="senior" />more than 50
+              </label>
             </td>
           </tr>
 
@@ -45,20 +43,35 @@
 
       <input type="submit" value="Search!" />
     </form>
+    <script>
+      // ageTable 요소 찾기
+      const ageTable = document.getElementById("age-table");
+      console.log(ageTable);
+
+      const lable = document.body.querySelectorAll("label");
+      console.log(lable); // table안의 label만 선택(3개) -> 출력 결과 위의 label까지 나옴
+
+      const td = document.body.querySelector("td");
+      console.log(td);
+
+      const nameSearch = document.body.querySelector('form[name="search"]');
+      console.log(nameSearch);
+
+      const formes = document.body.querySelectorAll("form");
+      console.log(formes);
+
+      const firstInputs = [];
+      for (let form of formes) {
+        firstInputs.push(form.querySelector("input"));
+      }
+      console.log(firstInputs);
+
+      const lastInputs = [];
+      for (let form of formes) {
+        const input = form.querySelectorAll("input");
+        lastInputs.push(input[input.length - 1]);
+      }
+      console.log(lastInputs);
+    </script>
   </body>
-  <script>
-    // id="age-table"인 테이블
-    const ageTb1 = document.getElementById("age-list");
-    console.log(ageTb1);
-
-    const ageTb2 = document.querySelector("#age-list");
-    console.log(ageTb2);
-
-    const ageTb3 = document.body.children[2].children[0];
-    console.log(ageTb3);
-    // 테이블 내의 label 요소 모두(총 3개)
-    // children
-    const label1 = ageTb1.querySelectorAll.td;
-    console.log(label1);
-  </script>
 </html>

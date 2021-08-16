@@ -1,20 +1,23 @@
 <html>
+  <body>
+    <input type="button" id="hider" value="Click to hide the text" />
+    <div id="text">Text</div>
+    <script>
+      // Add JavaScript to the button to make
+      // <div id="text"> disappear when we click it.
 
-<body>
-  <input type="button" id="hider" value="Click to hide the text">
-  <div id="text">Text</div>
-  <script>
-    // Add JavaScript to the button to make 
-    // <div id="text"> disappear when we click it.
-    const btn = document.querySelector("#hider");
-    const div = document.querySelector("#text");
+      // 1. 제어하려는 요소 선택
+      const btn = document.querySelector("#hider");
+      const div = document.querySelector("#text");
 
-    btn.addEventListener("click",)
+      // 이벤트 리스너를 부착
+      // btn요소가 click이벤트가 발생했을 때 hide함수가 실행됨.
+      btn.addEventListener("click", hide);
 
-    function hide() {
-
-    }
-  </script>
-</body>
-
+      // 3. 이벤트를 처리할 코드 작성
+      function hide() {
+        div.hidden = true;
+      }
+    </script>
+  </body>
 </html>

@@ -1,16 +1,16 @@
 <html>
+  <body>
+    <!-- 문서에서 data-widget-name이라는 속성을 가진 요소를 찾고, 
+      해당 요소의 값을 읽는 코드를 작성해 보세요. -->
+    <div data-widget-name="menu">Choose the genre</div>
 
-<body>
+    <script>
+      const div = document.querySelector("div");
 
-  <div data-widget-name="menu">Choose the genre</div>
-
-  <script>
-    const div = document.querySelector("div");
-
-    // camel-case로 바뀜
-    // data-widget-name -> dataset.widgetName;
-    console.log(div.dataset.widgetName);
-  </script>
-</body>
-
+      // camel-case로 바뀜
+      // html,css에서는 -(하이픈으로 띄어쓰기), javascript에서는 대문자(camelcase)로 띄어쓰기
+      // data-widget-name -> dataset.widgetName;
+      console.log(div.dataset.widgetName);
+    </script>
+  </body>
 </html>
