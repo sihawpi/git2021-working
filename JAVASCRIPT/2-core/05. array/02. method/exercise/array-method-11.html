@@ -1,5 +1,26 @@
 <html>
   <body>
-    <script></script>
+    <script>
+      let john = { name: "John", age: 25 };
+      let pete = { name: "Pete", age: 30 };
+      let mary = { name: "Mary", age: 29 };
+
+      let arr = [john, pete, mary];
+
+      function getAverage(arr) {
+        // reduce스타일
+        let sumAge = arr.reduce((sum, arr) => sum + arr.age, 0);
+
+        // for of 스타일
+        // let sum = 0;
+        // for (let arrItem of arr) {
+        //   sum = +arrItem.age;
+        // }
+
+        return sumAge / arr.length;
+      }
+
+      console.log(getAverage(arr));
+    </script>
   </body>
 </html>

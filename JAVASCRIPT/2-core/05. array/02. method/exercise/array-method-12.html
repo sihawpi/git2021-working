@@ -1,5 +1,68 @@
 <html>
   <body>
-    <script></script>
+    <script>
+      function unique(arr) {
+        /*for (let str of arr) {
+          if (!arr.includes(str)) {
+            console.log(str);
+          }
+        }*/
+
+        /*for(i=0; i<arr.length; i++) {
+          if (!arr.includes(arr[i])) {
+            console.log(arr[i]);
+          }
+        }*/
+
+        // 위 두 코드가 실행이 안되는 이유가 뭘까...
+
+        let result = [];
+
+        for (let str of arr) {
+          if (!result.includes(str)) {
+            result.push(str);
+          }
+        } // 새로운 배열을 만들고 그 배열에 중복 요소는 push하지 않는다.
+
+        return result;
+      }
+
+      let strings = [
+        "kang",
+        "Hare",
+        "Krishna",
+        "Hare",
+        "Krishna",
+        "Krishna",
+        "Krishna",
+        "Hare",
+        "Hare",
+        ":-O",
+      ];
+
+      console.log(unique(strings)); // Hare, Krishna, :-O
+
+      // Set 중복이 없이 저장 가능함.
+      // let set = new Set();
+      // set.add("lee");
+      // set.add("hong");
+      // set.add("lee");
+      // set.add("kim");
+
+      // for (let value of set) {
+      //   console.log(value);
+      // }
+      // console.log(set.size);
+
+      // new Set(배열)
+      let set1 = new Set(strings);
+      for (let value of set1) {
+        console.log(value);
+      }
+      console.log(set1.size);
+
+      // Set을 배열로 변환
+      console.log([...set1]);
+    </script>
   </body>
 </html>
