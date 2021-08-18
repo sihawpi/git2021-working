@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+// JSX: Javascript 기반의 HTML 태그 형식
+// 각가의
+
 function App() {
   return (
     <div className="App">

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+// 모듈: 부분 코드
+// App.tsx모듈을 가져오고 App이름으로 선언함
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

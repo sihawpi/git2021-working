@@ -5,7 +5,7 @@
       function camelize(str) {
         // -구분자로 문자열 나눠서 배열화
         let strArr = str.split("-");
-        console.lgo(strArr);
+        console.log(strArr);
 
         // 첫번째 반복
         // acc = ""
@@ -21,6 +21,8 @@
 
         // 최종 반환값
         // acc = "backgroundColor"
+        // 배열.reduce((누산변수, 현재요소변수, 현재인덱스변수) =>
+        //            { return 계산식 }, 누산변수의 초기값)
         return strArr.reduce(
           (acc, item, index) =>
             acc + (index == 0 ? item : item[0].toUpperCase() + item.substr(1)),

@@ -14,6 +14,9 @@ console.log(sum(1, 2));
 function capitalize(str: string): string {
   // IDE(integrated development evironment)에서 매개변수가 문자열인 것을 인지함
   // 해당 형식에 맞는 함수나 속성을 자동완성하여 사용할 수 있게됨.
+  // .toUpperCase, substr같은 함수들은 변수가 string일때 사용할 수 있다.
+  // javascript모드에서는 변수 타입이 정해져있지 않기때문에 자동완성 추천을 해 줄 수 없음
+  // typescript모드에서는 변수 타입을 지정하기 때문에 string이 확인 된다면 그에 맞는 자동완성 예시를 보여줄 수 있음
   return str[0].toUpperCase() + str.substr(1);
 }
 

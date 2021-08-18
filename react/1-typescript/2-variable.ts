@@ -8,3 +8,4 @@ str = "John";
 
 num = 1;
 // num = "John"; // type error
+
