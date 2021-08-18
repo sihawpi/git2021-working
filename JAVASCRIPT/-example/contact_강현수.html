@@ -65,6 +65,7 @@
          <th width=28%>E-Mail</th>
          <th width=10%>작업</th>
       </thead>
+      </thead>
        <tbody id="tbody">
         <tr id="tr"></tr>
        </tbody>
@@ -89,9 +90,6 @@
       const trow = document.querySelector("#tr");
       // tr갯수?
       let trNum = 1;
-      if(remove(event)) {
-        trNum--;
-      }
 
 
         // 입력박스에 키보드 이벤트 추가
@@ -172,6 +170,7 @@
           // 삭제버튼의 부모 부모노드인 tbody
           const t = btnRemove.parentNode.parentNode;
           t.remove();
+          trNum--;
         }
       }
     </script>

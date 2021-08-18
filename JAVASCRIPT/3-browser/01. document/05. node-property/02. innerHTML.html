@@ -1,20 +1,26 @@
 <html>
+  <body>
+    <p>p 태그</p>
+    <div>div 태그</div>
 
-<body>
-  <p>p 태그</p>
-  <div>div 태그</div>
+    <script>
+      // DOM객체.innerHTML
+      // 요소 내부
+      console.log(document.body.innerHTML); // 내용 읽기
 
-  <script>
-    // DOM객체.innerHTML
-    // 요소 내부
-    console.log(document.body.innerHTML); // 내용 읽기
+      setTimeout(() => {
+        // 원래의 body 내부에 html태그를 추가함
+        document.body.innerHTML += "새로운 BODY!"; // body태그를 교체
+      }, 2000);
+      // body안에 script태그가 있기때문에 body를 통째로 교체하면 script태그도 사라짐
+      // body를 교체하기보단 세부 태그들을 변경하거나 추가함.
 
-    // setTimeout(실행할함수, 시간(ms));
-    setTimeout(() => {
-      // 원래의 body 내부에 html태그를 추가함
-      document.body.innerHTML += '<div>태그임</div>'; // 태그 추가
-    }, 2000)
-  </script>
-</body>
-
+      // setTimeout(실행할함수, 시간(ms));
+      setTimeout(() => {
+        // 원래의 body 내부에 html태그를 추가함
+        document.body.innerHTML += "<div>태그임</div>";
+      }, 2000);
+      // div태그를 추가함
+    </script>
+  </body>
 </html>
