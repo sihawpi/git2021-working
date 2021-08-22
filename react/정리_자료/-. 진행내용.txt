@@ -22,6 +22,8 @@ npm install -g @types/node
 4. interface
   -> 구조화된 타입 형식의 선언
   -> ?, optional
+5. generic
+6. any
 
 
 -- Typescript로 React 컴포넌트 다루기
@@ -35,12 +37,6 @@ npm start
 
 
 0. 프로젝트 구조
-index.tsx
-/public
-App.tsx
-npm run build
-npm install -g server
-
 
 1. JSX, Function Component
 
@@ -52,36 +48,36 @@ npm install -g server
   -> 숫자데이터 Counter 컴포넌트
   -> (실습) Calculator, prompt 입력값 2개 및 연산자
   -> 배열데이터 Generator 컴포넌트
-  -> (실습) AccountManager, prompt로 입력값(+/-) 입출금 목록표시 및 합계 표시
+  -> (실습) AccountManager, 출금/입금 버튼 클릭 -> prompt로 값입력
+          ul>li로 입출금 목록표시 합계 금액을 우측에 표시
 
 4. ref, useRef
   -> Hello 컴포넌트
   -> (실습) CalculatorRef, ref로 입력값 2개 및 연산자 받고 연산
+  -> (실습) AccountManager, ref로 변경
+
 
 -- Bootstrap 사용
 1. 설치
 npm install bootstrap @popperjs/core
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-2. 컴포넌트 사용
- - Counter Button
-
-3. 테마변경
 npm install node-sass
+
+2. 테마변경
 App.scss
 @import "~bootstrap/scss/bootstrap";
+...
+
+3. 컴포넌트 사용
+ - Button, Card
 
 4. Sass
 - 변수
 
--- 실전 컴포넌트 제작
-1. todo application
-2. 실습 contact
-3. 실습 feed
 
 
 -- React Router 기초
 npm install react-router-dom
+npm install @types/react-router-dom
 
 1. react-router-dom, switch, route
 -> todo, contact, feed 페이지 나누기
@@ -91,6 +87,14 @@ npm install react-router-dom
     - Todo
     - Contact
     - Feed
+
+
+
+-- 실전 컴포넌트 제작
+1. todo application
+(옵션) 2. 실습 contact
+3. 실습 feed
+
 
 
 -------------------- 응용SW기초기술활용

@@ -18,39 +18,32 @@ import { useState } from "react";
 //     <div>50</div>
 
 const Calculator = () => {
+
   const [result, setResult] = useState(0);
   const calculate = () => {
-    const a = prompt("첫번째 숫자");
-    const b = prompt("두번째 숫자");
-    const op = prompt("연산자, (+, -, *, /)");
-
-    console.log(`${a}${op}${b}`);
+    const a = prompt('첫번째 숫자');  // 첫번째 피연산자
+    const b = prompt('두번째 숫자');  // 두번째 피연산자
+    const Operator = prompt('연산자, (+, -, *, /');  // 연산자
+    // 입력값을 string으로 받았음 -> number로 바꿔줘야함
 
     // eval(문자열)
-    // 문자열이 자바스크립트코드로 실행할 수 있으면 실행
-    // const code = `alert(${a}${op}${b})`;
-    // eval(code);
-    // eslint-disable-next-line
-    setResult(eval(`${a}${op}${b}`));
+    // 문자열이 javascript코드로 실행 할 수 있으면 js코드로 실행
+    // js는 string을 자동으로 숫자로 변환해서 연산하기때문에 return값을 number로 줄 수 있음
+    console.log(eval(`${a}${Operator}${b}`));
+    setResult(eval(`${a}${Operator}${b}`));
 
     // state 값에 변동이 없으면 컴포넌트를 업데이트하지 않음
     // 기존 result == 20
-    // 변동 result == 20, 컴포넌트를 업데이트하지 않음
-  };
+    // 변동 result == 20, -> 컴포넌트를 업데이트하지 않음
+  }
 
   return (
-    <div>
-      <h2>Calculator</h2>
-      <button
-        onClick={() => {
-          calculate();
-        }}
-      >
-        Start
-      </button>
-      <div>{result}</div>
+  <div>
+    <h2>Calculator</h2>
+    <button onClick={calculate}>start</button>
+    <div>{result}</div>
     </div>
-  );
-};
+  )
+}
 
 export default Calculator;

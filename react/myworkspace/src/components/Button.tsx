@@ -12,12 +12,13 @@ import React from "react";
 
 interface ButtonProp {
   // color: "white" | "black";
-  // backgroundColor: "red" | "green" | "blue";
   variant: "primary" | "secondary" | "warning";
+  // text: string.toUpperCase;  //prop에 메소드 불가 
   text: string;
 }
 
-const Button: React.FC<ButtonProp> = ({ variant, text }) => {
+const Button = ({ variant, text }: ButtonProp) => {
+
   let bgColor = "blue";
   let color = "black";
 
@@ -43,7 +44,7 @@ const Button: React.FC<ButtonProp> = ({ variant, text }) => {
         backgroundColor: bgColor,
       }}
     >
-      {text.toUpperCase()}
+     {text.toUpperCase()}
     </button>
   );
 };

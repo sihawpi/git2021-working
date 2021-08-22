@@ -5,7 +5,7 @@ import "./index.css";
 // 모듈: 부분 코드
 // App.tsx 모듈을 가져오고 App이름으로 선언함
 // export default로 내보낸 객체가 App이름으로 선언됨
-import App from "./App"; // App.tsx
+import App from "./App"; // App.tsx를 가져옴
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,6 +16,8 @@ ReactDOM.render(
   <React.StrictMode>
     <App /> {/* App 컴포넌트 */}
   </React.StrictMode>,
+  // index.html에 (id="root")인 div태그에 
+  // import한 app.tsx의 해당(id="root")컴포넌트(코드)를 가져다 줌.
   document.getElementById("root")
 );
 

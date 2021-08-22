@@ -6,6 +6,7 @@
 interface User {
   firstname: string;
   lastname?: string; // 속성명?, optional(필수값이 아닌) 속성, ? => 변수를 필수로 입력하지 않아도 됨
+  phone?: string;
 }
 
 // 매개변수: 타입(User=객체)
