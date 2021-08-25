@@ -6,3 +6,25 @@
   - https://medium.com/sjk5766/virtual-dom%EC%97%90-%EB%8C%80%ED%95%B4-7222d752ee65
   - https://ko.reactjs.org/docs/faq-internals.html
 . Function Component
+
+SPA(Single Page Application)
+: 페이지 파일이 1개, index.html
+: 특정 영역에 컴포넌트(js)를 로딩함
+: 애플리케이션이 처음 로딩될 때 import한 컴포넌트를 로딩함 
+  => 처음 페이지 접속시 = 애플리케이션이 컴파일 될 때 import한(컴포넌트)들이 로딩이됨.
+  => 컴파일됐을 때 파일크키가 커짐, 초기 로딩속도가 많이 느림
+=> 접속했을 때 메인 화면만 로딩하고 나머지 컴포넌트들은 접속했을 때만 로딩되도록 만들어야함  
+
+  Lazy Loading
+: 컴포넌트를 방문할 때 로딩을 함
+
+
+날짜를 관리할 때
+unix time, epoch time, posix time,
+: 1970년 1월 1일부터 ms(1/1000) 단위의 표기법
+: 전세계 공통, 변화된 시간은 같음
+
+=> new Date().getTime() -> unix time 생성됨
+
+UTC(GMT) 표준시 
+: UTC + 0900

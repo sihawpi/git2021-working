@@ -1,6 +1,6 @@
 // Calculator 컴포넌트
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // 1. 버튼을 클릭하면 prompt로 입력값을 두번 받음
 // a = prompt, b = prompt
@@ -18,12 +18,12 @@ import { useState } from "react";
 //     <div>50</div>
 
 const Calculator = () => {
-
   const [result, setResult] = useState(0);
+
   const calculate = () => {
-    const a = prompt('첫번째 숫자');  // 첫번째 피연산자
-    const b = prompt('두번째 숫자');  // 두번째 피연산자
-    const Operator = prompt('연산자, (+, -, *, /');  // 연산자
+    const a = prompt("첫번째 숫자"); // 첫번째 피연산자
+    const b = prompt("두번째 숫자"); // 두번째 피연산자
+    const Operator = prompt("연산자, (+, -, *, /"); // 연산자
     // 입력값을 string으로 받았음 -> number로 바꿔줘야함
 
     // eval(문자열)
@@ -35,15 +35,15 @@ const Calculator = () => {
     // state 값에 변동이 없으면 컴포넌트를 업데이트하지 않음
     // 기존 result == 20
     // 변동 result == 20, -> 컴포넌트를 업데이트하지 않음
-  }
+  };
 
   return (
-  <div>
-    <h2>Calculator</h2>
-    <button onClick={calculate}>start</button>
-    <div>{result}</div>
+    <div>
+      <h2>Calculator</h2>
+      <button onClick={calculate}>start</button>
+      <div>{result}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Calculator;
