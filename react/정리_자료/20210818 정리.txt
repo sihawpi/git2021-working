@@ -28,3 +28,25 @@ unix time, epoch time, posix time,
 
 UTC(GMT) 표준시 
 : UTC + 0900
+
+
+immer
+react에서의 state변수 제어는 불변성때문에 제한이 많았다
+=(객체를 직접 조작하는게 아닌 객체를 복사또는 참조(spread, map, filter)해서 새로운 객체를 이용했음)
+-> 원시값(number, string, boolean)
+  -> 그냥 값 변경해줌
+-> 객체(object, array) 
+  -> 참조가 바뀌어야함
+  -> 새로운 객체를 생성해야함
+
+immer를 사용하면 react객체를 js객체처럼 사용할 수 있게 해줌
+-> object, array 메소드를 사용할 수 있음
+
+  immer 없을 때
+직접 새로운 객체를 생성함
+
+  immer를 사용할 때
+변경될 객체(새로운객체)를 immer가 생성함
+해당객체를 조작(push, splice, unshift)해서 state에 바로 반영
+
+

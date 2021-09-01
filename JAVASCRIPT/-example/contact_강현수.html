@@ -31,48 +31,53 @@
     <!-- d-flex 해당 태그 플렉스화 -->
     <form id="form-input" class="d-flex" onsubmit="return false;">
       <!-- me-1: margin end(right-왼쪽부터 오른쪽 작성 언어일때) -->
-      <input 
-      id="txt-name" 
-      type="text" 
-      class="form-control me-1" 
-      placeholder="이름">
+      <input
+        id="txt-name"
+        type="text"
+        class="form-control me-1"
+        placeholder="이름"
+      />
 
-      <input 
-      id="txt-phone" 
-      type="phone" 
-      class="form-control me-1" 
-      placeholder="전화번호" />
-      
-      <input 
-      id="txt-email" 
-      type="email" 
-      class="form-control me-3" 
-      placeholder="이메일: email@test.com" />
+      <input
+        id="txt-phone"
+        type="phone"
+        class="form-control me-1"
+        placeholder="전화번호"
+      />
+
+      <input
+        id="txt-email"
+        type="email"
+        class="form-control me-3"
+        placeholder="이메일: email@test.com"
+      />
 
       <!-- text-nowrap - 한글사용시 줄바꿈 없앰. -->
-      <button id="btn-add" type="button" class="btn btn-outline-primary text-nowrap">추가</button>
+      <button
+        id="btn-add"
+        type="button"
+        class="btn btn-outline-primary text-nowrap"
+      >
+        추가
+      </button>
     </form>
-      <!-- ul li에 입력값을 넣기위해 id를 넣어 선택자를 활용하기 편하게 함 -->
-      <!-- <ul id="ul-list" class="list-group list-group-flush mt-4">
+    <!-- ul li에 입력값을 넣기위해 id를 넣어 선택자를 활용하기 편하게 함 -->
+    <!-- <ul id="ul-list" class="list-group list-group-flush mt-4">
        </ul> -->
 
-       <!-- table td에 입력값을 넣기 위한 id -->
-       <table class="table table-striped rows">
-       <thead>
-         <th width=10%>#</th>
-         <th>Name</th>
-         <th>Phone-Call</th>
-         <th width=28%>E-Mail</th>
-         <th width=10%>작업</th>
+    <!-- table td에 입력값을 넣기 위한 id -->
+    <table class="table table-striped rows">
+      <thead>
+        <th width="10%">#</th>
+        <th>Name</th>
+        <th>Phone-Call</th>
+        <th width="28%">E-Mail</th>
+        <th width="10%">작업</th>
       </thead>
-      </thead>
-       <tbody id="tbody">
+      <tbody id="tbody">
         <tr id="tr"></tr>
-       </tbody>
-     
-    </tr>
-  </tbody>
-</table>
+      </tbody>
+    </table>
 
     <script>
       // form 선택
@@ -91,44 +96,43 @@
       // tr갯수?
       let trNum = 1;
 
-
-        // 입력박스에 키보드 이벤트 추가
-        // 엔터키를 입력했을 때만 화면에 추가하도록 함 
-        // enter키의 key code = 13
-        txtName.addEventListener("keyup", (event) =>{
+      // 입력박스에 키보드 이벤트 추가
+      // 엔터키를 입력했을 때만 화면에 추가하도록 함
+      // enter키의 key code = 13
+      txtName.addEventListener("keyup", (event) => {
         if (event.keyCode == 13) {
           add(event);
-          }
-        });
-        txtPhone.addEventListener("keyup", (event) =>{
-        // 엔터키를 입력했을 때만 화면에 추가하도록 함 
+        }
+      });
+      txtPhone.addEventListener("keyup", (event) => {
+        // 엔터키를 입력했을 때만 화면에 추가하도록 함
         // enter키의 key code = 13
         if (event.keyCode == 13) {
           add(event);
-          }
-        });
+        }
+      });
 
-        txtEmail.addEventListener("keyup", (event) =>{
-        // 엔터키를 입력했을 때만 화면에 추가하도록 함 
+      txtEmail.addEventListener("keyup", (event) => {
+        // 엔터키를 입력했을 때만 화면에 추가하도록 함
         // enter키의 key code = 13
         if (event.keyCode == 13) {
           txtMemo.blur(); // 입력박스의 포커스 초기화
           add(event);
-          }
-        });
+        }
+      });
 
       // 버튼에 이벤트 추가
-      btnAdd.addEventListener("click", add)
+      btnAdd.addEventListener("click", add);
 
       // tr 태그에 이벤트 추가
-       tbody.addEventListener("click", remove)
+      tbody.addEventListener("click", remove);
 
       // 추가 이벤트 함수
       function add(event) {
         // console.log(txtEmail.value);
-          
+
         // input중 하나라도 입력값이 없으면 함수 종료
-        if(!txtName.value || !txtPhone.value || !txtEmail.value) {
+        if (!txtName.value || !txtPhone.value || !txtEmail.value) {
           const alert = /*html*/ `
           <div class="alert alert-danger alert-dismissible my-2" role="alert" id="liveAlert">
             작성하지 않은 항목이 있습니다.
@@ -143,7 +147,7 @@
         // 생성할 템플릿 문자열
         // let trNum = 1; 함수구문 안에 변수를 선언하면 외부에서는 초기화됨...
         // -> 함수 밖에서 선언후 함수에서 불러오자.
-        const tr = /*html*/`
+        const tr = /*html*/ `
          <tr id="tr">
           <td>${trNum++}</td>
           <td>${txtName.value}</td>
@@ -157,8 +161,8 @@
         // trow요소의 끝태그 다음에 추가
         trow.insertAdjacentHTML("afterend", tr);
 
-         // form 내부 요소의 입력값을 초기화
-        form.reset(); 
+        // form 내부 요소의 입력값을 초기화
+        form.reset();
       }
 
       // 목록 삭제 이벤트 함수

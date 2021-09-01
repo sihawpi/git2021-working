@@ -1,0 +1,4 @@
+ssh -i "myworkspace.pem" ubuntu@ec2-54-180-202-205.ap-northeast-2.compute.amazonaws.com
+
+서버 주소
+ec2-54-180-202-205.ap-northeast-2.compute.amazonaws.com
