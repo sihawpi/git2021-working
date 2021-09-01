@@ -2,13 +2,14 @@ import { useRef, useState } from "react";
 
 interface FeedState {
   id: number;
-  content: string | undefined;
+  text: string | undefined;
   url: string | undefined;
   type: string;
   createTime: number;
   modifyTime?: number;
 }
 
+// 생성 날짜 + 시간
 const getTimeString = (unixtime: number) => {
   const dateTime = new Date(unixtime);
   return `${dateTime.toLocaleDateString()} ${dateTime.toLocaleTimeString()}`;
@@ -33,11 +34,9 @@ const Feed = () => {
       reader.onload = () => {
         const baseCode = reader.result?.toString();
 
-        console.log(baseCode);
-
         const data: FeedState = {
           id: feed.length > 0 ? feed[0].id + 1 : 1,
-          content: inputContent,
+          text: inputContent,
           url: baseCode,
           type: fileType,
           createTime: new Date().getTime(),
@@ -53,13 +52,12 @@ const Feed = () => {
     setFeed(feed.filter((item) => item.id !== id));
   };
   return (
-    <>
+    <div style={{ width: "40vw" }} className='mx-auto'>
       <form>
         <textarea
           className='form-control mb-1'
           placeholder='Leave a post here'
           ref={textRef}
-          style={{ boxSizing: "border-box" }}
         ></textarea>
         <div className='d-flex'>
           <input
@@ -72,7 +70,7 @@ const Feed = () => {
           />
           <button
             type='button'
-            className='btn btn-primary content-nowrap'
+            className='btn btn-primary text-nowrap'
             onClick={() => {
               add();
             }}
@@ -83,11 +81,12 @@ const Feed = () => {
       </form>
       {feed.map((item) =>
         item.type === "video/mp4" ? (
-          <div key={item.id} className='card'>
+          <div key={item.id} className='card mt-1'>
+            <div className='card-header'>Featured</div>
             <video controls>
               <source src={item.url} type='video/mp4'></source>
             </video>
-            <p className='card-content'>{item.content}</p>
+            <p className='card-content'>{item.text}</p>
             <div className='card-body d-flex'>
               <span className='w-100'>
                 {getTimeString(
@@ -95,10 +94,11 @@ const Feed = () => {
                 )}
               </span>
               <a
-                onClick={() => {
+                href='#!'
+                onClick={(e) => {
+                  e.preventDefault(); // 기본 동작 방지
                   remove(item.id);
                 }}
-                href='#!'
                 className='link-secondary fs-6 float-end content-nowrap'
               >
                 삭제
@@ -107,8 +107,9 @@ const Feed = () => {
           </div>
         ) : (
           <div key={item.id} className='card'>
+            <div className='card-header'>Featured</div>
             <img src={item.url} className='card-img-top' alt='…' />
-            <p className='card-content'>{item.content}</p>
+            <p className='card-content'>{item.text}</p>
             <div className='card-body d-flex'>
               <span className='w-100'>
                 {getTimeString(
@@ -128,7 +129,7 @@ const Feed = () => {
           </div>
         )
       )}
-    </>
+    </div>
   );
 };
 

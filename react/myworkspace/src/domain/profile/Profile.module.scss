@@ -1,0 +1,28 @@
+@import "../../styles/app-variables.scss";
+
+$humb-size: 24px;
+$profile-image-size: 100px;
+
+.thumb {
+  width: 24px;
+  height: 24px;
+  // (50 - 24) /2 = 13
+  margin-top: calc((#{$app-bar-height} - #{$humb-size}) / 2);
+  // --- 이 3개로 인해 사진이 중앙에 나옴
+  background-position: center; // background이미지 중앙정렬
+  background-repeat: no-repeat; //반복 x
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.username {
+  line-height: $app-bar-height;
+}
+
+.thumb-large {
+  width: $profile-image-size;
+  height: $profile-image-size;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

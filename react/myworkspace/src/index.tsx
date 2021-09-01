@@ -5,7 +5,7 @@ import "./index.css";
 // 모듈: 부분 코드
 // App.tsx 모듈을 가져오고 App이름으로 선언함
 // export default로 내보낸 객체가 App이름으로 선언됨
-import App from "./App_강현수"; // App.tsx를 가져옴
+import App from "./App"; // App.tsx를 가져옴
 
 import reportWebVitals from "./reportWebVitals";
 

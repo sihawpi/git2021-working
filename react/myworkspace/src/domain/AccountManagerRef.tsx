@@ -107,4 +107,4 @@ const AccountManager = () => {
   );
 };
 
-export default AccountManager
+export default AccountManager;
