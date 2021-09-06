@@ -1,7 +1,4 @@
 /* 일반적인 css, 웹 에 전채적으로 적용 */
-* {
-  box-sizing: border-box;
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

@@ -11,7 +11,7 @@ import Profile from "./domain/profile/Profile";
 
 const Contact = lazy(() => import("./domain/contact/Contact_강현수"));
 const Todo = lazy(() => import("./domain/todo/Todo"));
-const feed = lazy(() => import("./domain/feed/feed_강현수"));
+const feed = lazy(() => import("./domain/feed/feed"));
 const Photo = lazy(() => import("./domain/photo/Photo"));
 // Suspense영역 태그는 밖에 lazy로딩이 되지 않기 때문에 import를 걸어줘야함
 // const Navigation = lazy(() => import("./Navigation"));
